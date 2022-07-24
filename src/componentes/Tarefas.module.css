@@ -1,0 +1,15 @@
+
+.form{
+    
+}
+
+.toDoList{
+    max-width: 800px;
+}
+
+.toDoList header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
