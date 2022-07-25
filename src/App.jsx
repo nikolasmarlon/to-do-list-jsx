@@ -4,7 +4,7 @@ import styles from './App.module.css'
 import { Header } from './componentes/Header'
 import { Tarefas } from './componentes/Tarefas'
 
-function App() {
+export function App() {
   
 
   return (
@@ -20,4 +20,3 @@ function App() {
   )
 }
 
-export default App
