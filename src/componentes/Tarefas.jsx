@@ -1,3 +1,4 @@
+import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
 
 
@@ -22,10 +23,10 @@ export function Tarefas(){
                 </div>
                 
             </header>
-
-            <section>
-
-            </section>
+            <main>
+                <Tarefa />
+            </main>
+            
         </div>
     )
 }
