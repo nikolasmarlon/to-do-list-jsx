@@ -25,6 +25,9 @@ export function Tarefas(){
             </header>
             <main>
                 <Tarefa />
+                <Tarefa />
+                <Tarefa />
+                <Tarefa />
             </main>
             
         </div>

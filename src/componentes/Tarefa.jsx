@@ -3,8 +3,8 @@ import styles from './Tarefa.module.css'
 
 export function Tarefa(){
     return(
-        <div>
-            <input id='tarefa' type="radio" /> <label htmlFor="tarefa">Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label> <span>X</span>
+        <div className={styles.contentTarefa}>
+            <span>0</span><p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p><span>X</span>
         </div>
     )
 }

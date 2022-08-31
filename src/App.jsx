@@ -10,11 +10,11 @@ export function App() {
   return (
     <div>
         <Header />
-      <main className={styles.header}>
+        <main className={styles.header}>
         
-        <Tarefas />       
+          <Tarefas />       
       
-      </main>   
+        </main>   
         
     </div>
   )
