@@ -1,11 +1,14 @@
 import styles from './Tarefa.module.css'
-
+import tarefaConcluida from '../assets/tarefaConcluida.svg'
+import tarefaEmAberto from '../assets/tarefaEmAberto.svg'
+import { Trash } from 'phosphor-react'
 
 export function Tarefa(){
     return(
         <div className={styles.contentTarefa}>
-            <span>0</span><p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p><span>X</span>
+            <img src={tarefaEmAberto}/> <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p><span><Trash size={20} /></span>
         </div>
+        
     )
 }
 

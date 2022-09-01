@@ -8,3 +8,11 @@
     padding: 1rem;
     border-radius: 8px;
 }
+
+.contentTarefa p {
+    size: 0.875rem;
+}
+
+.contentTarefa > span{
+    color: var(--gray-300);
+}

@@ -1,5 +1,6 @@
 import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
+import { PlusCircle } from 'phosphor-react'
 
 
 export function Tarefas(){
@@ -7,10 +8,10 @@ export function Tarefas(){
         
 
         <div className={styles.toDoList}>  
-            <div className={styles.form}>
+            <div className={styles.divForm}>
                 <form action="">
-                    <input></input>
-                    <button>Criar <span>+</span></button>
+                    <input placeholder='Adicione uma nova tarefa' type="text" />
+                    <button>Criar <PlusCircle className={styles.plus} size={16} /></button>
                 </form>
             </div>
 
