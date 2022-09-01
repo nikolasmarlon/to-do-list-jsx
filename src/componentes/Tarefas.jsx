@@ -1,7 +1,7 @@
 import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
 import { PlusCircle } from 'phosphor-react'
-
+import plusIcon from '../assets/plus.svg'
 
 export function Tarefas(){
     return(
@@ -11,13 +11,13 @@ export function Tarefas(){
             <div className={styles.divForm}>
                 <form action="">
                     <input placeholder='Adicione uma nova tarefa' type="text" />
-                    <button>Criar <PlusCircle className={styles.plus} size={16} /></button>
+                    <button>Criar <img src={plusIcon} /></button>
                 </form>
             </div>
 
             <header>
                 <div>
-                    <h3>Tarefas criadas <span>5</span></h3>
+                    <p>Tarefas criadas <span>5</span></p>
                 </div>
                 <div>
                     <p>Concluídas <span>2 de 5</span></p>
