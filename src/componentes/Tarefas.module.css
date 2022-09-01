@@ -22,6 +22,7 @@
     border: 1px solid var(--gray-700);
     color: var(--gray-300);
     padding: 1rem;
+    font-size: 1rem;
     
     
 }
@@ -36,7 +37,7 @@
     width: 5.625rem;
     height: 3.25rem;
     border-radius: 8px;
-    
+    font-size: 0.875rem;
     font-weight: bold;
     
     
@@ -48,7 +49,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    font-size: 1.063rem;
+    font-size: 0.875rem;
     font-weight: bold;
     margin-bottom: 25px;
     
@@ -56,24 +57,33 @@
 }
 
 .toDoList header div:first-child{
-    display: flex;
+    
     color: var(--blue);
-    gap: 8px;  
+    gap: 8px; 
+    font-weight: bold; 
     
 }
 
-.toDoList header div:last-child{
+.toDoList header:first-child div {
+    display: flex;
+    background-color: blue;
+}
+
+.toDoList header div:last-child{   
+    gap: 8px; 
     color: var(--purple);
     font-weight: bold;
-    font-size: 1.063rem;
+    background-color: red;
+    
 }
 
 
 .toDoList header span {
+    
     border-radius: 999px;
     width: 1.5rem;
     height: 1.188rem;
-    font-size: 0.938rem;
+    
     padding: 2px 8px;
     color: var(--gray-200);
     background-color: var(--gray-400);

@@ -17,10 +17,10 @@ export function Tarefas(){
 
             <header>
                 <div>
-                    <p>Tarefas criadas <span>5</span></p>
+                    <p>Tarefas criadas</p> <span>5 de 3</span>
                 </div>
                 <div>
-                    <p>Concluídas <span>2 de 5</span></p>
+                    <p>Concluídas</p> <span>2 de 5</span>
                 </div>
                 
             </header>
