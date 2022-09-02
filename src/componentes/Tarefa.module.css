@@ -12,8 +12,20 @@
 .contentTarefa p {
     size: 0.875rem;
     text-decoration: line-through;
+    line-height: 1.4;
 }
 
 .contentTarefa > span{
     color: var(--gray-300);
+    background-color: transparent;
+    padding: 0.313rem 0.375rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s , background-color 0.2s;
+}
+
+.contentTarefa > span:hover {
+    background-color: var(--gray-400);
+    color: var(--danger);
 }
