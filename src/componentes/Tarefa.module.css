@@ -11,6 +11,7 @@
 
 .contentTarefa p {
     size: 0.875rem;
+    text-decoration: line-through;
 }
 
 .contentTarefa > span{
