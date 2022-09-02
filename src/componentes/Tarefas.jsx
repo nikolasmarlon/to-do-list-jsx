@@ -16,8 +16,9 @@ export function Tarefas(){
             </div>
 
             <header>
-                <div>
-                    <p>Tarefas criadas</p> <span>5 de 3</span>
+                <div className={styles.esquerda}>
+
+                    <p>Tarefas criadas</p> <span>5</span>
                 </div>
                 <div>
                     <p>Concluídas</p> <span>2 de 5</span>
