@@ -7,16 +7,21 @@ import { useState } from 'react'
 export function Tarefas(){
 
 
-    const [tarefas, setTarefas] = useState([
-        1,
-        2,
-    ])
+    const [tarefas, setTarefas] = useState([])
+
+    const [novoTexto, setNovoTexto] = useState ('')
 
 
-    function handleTarefa () {
+    function handleNovaTarefa () {
         event.preventDefault()
 
-        setTarefas([...tarefas, tarefas.length + 1])
+        setTarefas([...tarefas, novoTexto])
+
+        setNovoTexto('')
+    }
+
+    function lidarComNovaTarefa(){
+        setNovoTexto(event.target.value)
     }
 
     return(
@@ -24,8 +29,13 @@ export function Tarefas(){
 
         <div className={styles.toDoList}>  
             <div className={styles.divForm}>
-                <form onSubmit={handleTarefa}>
-                    <input placeholder='Adicione uma nova tarefa' type="text" />
+                <form onSubmit={handleNovaTarefa}>
+                    <input 
+                        placeholder='Adicione uma nova tarefa' 
+                        type="text" 
+                        value={novoTexto}
+                        onChange={lidarComNovaTarefa}
+                    />
                     <button>Criar <img src={plusIcon} /></button>
                 </form>
             </div>
@@ -42,7 +52,7 @@ export function Tarefas(){
             </header>
             <main>
                 {tarefas.map(tarefa => {
-                    return <Tarefa />
+                    return <Tarefa content={tarefa} />
                 })}
                 
             </main>
