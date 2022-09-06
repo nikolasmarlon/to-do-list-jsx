@@ -10,9 +10,13 @@
 }
 
 .contentTarefa p {
+    width: 100%;
+    text-align: left;
     size: 0.875rem;
     text-decoration: line-through;
     line-height: 1.4;
+    
+    
 }
 
 .contentTarefa > span{
