@@ -2,14 +2,29 @@ import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
 import { PlusCircle } from 'phosphor-react'
 import plusIcon from '../assets/plus.svg'
+import { useState } from 'react'
 
 export function Tarefas(){
+
+
+    const [tarefas, setTarefas] = useState([
+        1,
+        2,
+    ])
+
+
+    function handleTarefa () {
+        event.preventDefault()
+
+        setTarefas([...tarefas, tarefas.length + 1])
+    }
+
     return(
         
 
         <div className={styles.toDoList}>  
             <div className={styles.divForm}>
-                <form action="">
+                <form onSubmit={handleTarefa}>
                     <input placeholder='Adicione uma nova tarefa' type="text" />
                     <button>Criar <img src={plusIcon} /></button>
                 </form>
@@ -26,10 +41,10 @@ export function Tarefas(){
                 
             </header>
             <main>
-                <Tarefa />
-                <Tarefa />
-                <Tarefa />
-                <Tarefa />
+                {tarefas.map(tarefa => {
+                    return <Tarefa />
+                })}
+                
             </main>
             
         </div>
