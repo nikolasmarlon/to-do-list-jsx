@@ -33,6 +33,7 @@ export function Tarefas(){
                     <input 
                         placeholder='Adicione uma nova tarefa' 
                         type="text" 
+                        required
                         value={novoTexto}
                         onChange={lidarComNovaTarefa}
                     />
