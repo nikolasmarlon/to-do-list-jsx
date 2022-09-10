@@ -7,12 +7,14 @@ import { useState } from 'react'
 export function Tarefas(){
 
 
-    const [tarefas, setTarefas] = useState([])
+    const [tarefas, setTarefas] = useState([
+        'Fazer estilização do botão'
+    ])
 
     const [novoTexto, setNovoTexto] = useState ('')
 
 
-    function handleNovaTarefa () {
+    function lidarComNovaTarefa () {
         event.preventDefault()
 
         setTarefas([...tarefas, novoTexto])
@@ -20,8 +22,12 @@ export function Tarefas(){
         setNovoTexto('')
     }
 
-    function lidarComNovaTarefa(){
+    function lidarComNovoTexto(){
         setNovoTexto(event.target.value)
+    }
+
+    function deletarTarefa (tarefa){
+        console.log (`Deletar comentário ${tarefa}`)
     }
 
     return(
@@ -29,13 +35,13 @@ export function Tarefas(){
 
         <div className={styles.toDoList}>  
             <div className={styles.divForm}>
-                <form onSubmit={handleNovaTarefa}>
+                <form onSubmit={lidarComNovaTarefa}>
                     <input 
                         placeholder='Adicione uma nova tarefa' 
                         type="text" 
                         required
                         value={novoTexto}
-                        onChange={lidarComNovaTarefa}
+                        onChange={lidarComNovoTexto}
                     />
                     <button>Criar <img src={plusIcon} /></button>
                 </form>
@@ -53,7 +59,11 @@ export function Tarefas(){
             </header>
             <main>
                 {tarefas.map(tarefa => {
-                    return <Tarefa content={tarefa} />
+                    return <Tarefa 
+                        key={tarefa} 
+                        content={tarefa} 
+                        deletarTarefa={deletarTarefa}
+                    />
                 })}
                 
             </main>

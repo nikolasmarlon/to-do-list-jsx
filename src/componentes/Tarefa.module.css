@@ -13,13 +13,14 @@
     width: 100%;
     text-align: left;
     size: 0.875rem;
-    text-decoration: line-through;
+    /* text-decoration: line-through; ativar quando concluir tarefa */
     line-height: 1.4;
     
     
 }
 
-.contentTarefa > span{
+.contentTarefa > button{
+    border: 0;
     color: var(--gray-300);
     background-color: transparent;
     padding: 0.313rem 0.375rem;
@@ -29,7 +30,7 @@
     transition: color 0.2s , background-color 0.2s;
 }
 
-.contentTarefa > span:hover {
+.contentTarefa > button:hover {
     background-color: var(--gray-400);
     color: var(--danger);
 }
