@@ -30,10 +30,6 @@
     margin-right: 15px;    
     vertical-align: middle;
     display: inline-block;
-    
-    
-    
-
 }
 
 .contentTarefa input:checked + p{
@@ -47,6 +43,7 @@
     background-image: url(../assets/checked.svg);
     background-repeat: no-repeat;
     background-position: center;
+    
 }
 
 .contentTarefa > button{
