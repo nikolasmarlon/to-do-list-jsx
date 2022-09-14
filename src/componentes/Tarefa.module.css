@@ -9,14 +9,17 @@
     border-radius: 8px;
 }
 
-.contentTarefa p {
+.contentTarefa  p {
     width: 100%;
     text-align: left;
-    size: 0.875rem;
-    /* text-decoration: line-through; ativar quando concluir tarefa */
-    line-height: 1.4;
+    size: 0.875rem;     
     
-    
+    margin-top: -2px;
+}
+
+.contentTarefa input:checked + p{
+    text-decoration: line-through;
+    color: var(--gray-300);
 }
 
 .contentTarefa > button{

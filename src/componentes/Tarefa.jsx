@@ -1,6 +1,4 @@
 import styles from './Tarefa.module.css'
-import tarefaConcluida from '../assets/tarefaConcluida.svg'
-import tarefaEmAberto from '../assets/tarefaEmAberto.svg'
 import { Trash } from 'phosphor-react'
 
 export function Tarefa({ content, deletarTarefa}){
@@ -10,13 +8,15 @@ export function Tarefa({ content, deletarTarefa}){
     }
 
     return(
-        <div className={styles.contentTarefa}>
-            <img src={tarefaEmAberto}/> 
+        <label for={ content } className={styles.contentTarefa}>
+            <input name="task" id={ content } type="checkbox" />
+
             <p>{ content }</p>
+            
             <button onClick={deletarTarefa} title='Deletar Tarefa'>
                 <Trash size={20} />
             </button>
-        </div>
+        </label>
         
     )
 }
