@@ -17,9 +17,36 @@
     margin-top: -2px;
 }
 
+.contentTarefa input {
+    display: none;
+}
+
+.contentTarefa input + p::before {
+    content: '';   
+    border-radius: 50px;    
+    height: 14.82px;
+    width: 14.82px;
+    border: solid 2.63px var(--blue);
+    margin-right: 15px;    
+    vertical-align: middle;
+    display: inline-block;
+    
+    
+    
+
+}
+
 .contentTarefa input:checked + p{
     text-decoration: line-through;
     color: var(--gray-300);
+}
+
+.contentTarefa input:checked + p::before {
+    background-color: var(--purple-dark);
+    border: solid 2.63px var(--purple-dark);
+    background-image: url(../assets/checked.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .contentTarefa > button{

@@ -17,6 +17,7 @@
 .divForm input[type=text]{  
     
     width: 100%;
+    height: 3.25rem;
     background-color: var(--gray-500);
     border-radius: 8px;
     border: 1px solid var(--gray-700);
