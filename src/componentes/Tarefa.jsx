@@ -10,8 +10,8 @@ export function Tarefa({ content, deletarTarefa}){
     return(
         <label for={ content } className={styles.contentTarefa}>
             <input name="task" id={ content } type="checkbox" />
-
-            <p>{ content }</p>
+            <span></span>
+            <p className={styles.checked}>{ content }</p>
             
             <button onClick={deletarTarefa} title='Deletar Tarefa'>
                 <Trash size={20} />
