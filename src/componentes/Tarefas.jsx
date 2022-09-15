@@ -50,10 +50,10 @@ export function Tarefas(){
             <header>
                 <div className={styles.esquerda}>
 
-                    <p>Tarefas criadas</p> <span>5</span>
+                    <p>Tarefas criadas</p> <span>{tarefas.length}</span>
                 </div>
                 <div>
-                    <p>Concluídas</p> <span>2 de 5</span>
+                    <p>Concluídas</p> <span>2 de {tarefas.length}</span>
                 </div>
                 
             </header>
