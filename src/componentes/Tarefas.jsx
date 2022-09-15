@@ -30,6 +30,8 @@ export function Tarefas(){
         console.log (`Deletar comentário ${tarefa}`)
     }
 
+    const casoNaoTenhaTexto = novoTexto.length <= 4
+
     return(
         
 
@@ -43,7 +45,7 @@ export function Tarefas(){
                         value={novoTexto}
                         onChange={lidarComNovoTexto}
                     />
-                    <button>Criar <img src={plusIcon} /></button>
+                    <button disabled={casoNaoTenhaTexto}>Criar <img src={plusIcon} /></button>
                 </form>
             </div>
 

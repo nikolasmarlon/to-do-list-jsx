@@ -45,10 +45,13 @@
     transition: background-color 0.2s;  
 }
 
-.divForm form button:hover {
+.divForm form button:not(:disabled):hover {
     background-color: var(--blue);
 }
-
+.divForm form button:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
 
 
 .toDoList header{
