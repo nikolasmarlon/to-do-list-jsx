@@ -7,9 +7,7 @@ import { useState } from 'react'
 export function Tarefas(){
 
 
-    const [tarefas, setTarefas] = useState([
-        'Fazer estilização do botão'
-    ])
+    const [tarefas, setTarefas] = useState([])
 
     const [novoTexto, setNovoTexto] = useState ('')
 
@@ -32,6 +30,12 @@ export function Tarefas(){
             return tarefa !== tarefaParaDeletar
         })
         setTarefas(novaListaSemTarefaDeletada)
+
+        
+        if (contadorDeTarefasConluida > 0){
+            setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
+        }
+        
         
     }
 
