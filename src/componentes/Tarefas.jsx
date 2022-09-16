@@ -31,7 +31,7 @@ export function Tarefas(){
         }        
     }
 
-    const casoNaoTenhaTexto = novoTexto.length <= 4
+    const casoNaoTenhaTexto = novoTexto.length <= 0
 
     const [contadorDeTarefasConluida, setContadorDeTarefasConcluida] = useState(0)
 
@@ -57,6 +57,7 @@ export function Tarefas(){
                         placeholder='Adicione uma nova tarefa' 
                         type="text" 
                         required
+                        minLength='3'
                         value={novoTexto}
                         onChange={lidarComNovoTexto}
                     />
