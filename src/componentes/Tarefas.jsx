@@ -42,13 +42,16 @@ export function Tarefas(){
 
     function contarTarefasConcluidas(checked) {
         console.log(contadorDeTarefasConluida)
-        if (checked == true) {
-            setContadorDeTarefasConcluida(contadorDeTarefasConluida + 1)               
+        if (checked === true) {
+            setContadorDeTarefasConcluida((estado) => {
+                return estado - 1
+            })               
             } else {
-            setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1 )             
+                setContadorDeTarefasConcluida((estado) => {
+                    return estado + 1
+                })        
             
-        }
-
+            }
         console.log(contadorDeTarefasConluida)
     }
 
