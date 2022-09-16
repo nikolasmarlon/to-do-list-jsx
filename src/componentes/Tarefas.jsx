@@ -57,7 +57,6 @@ export function Tarefas(){
                         placeholder='Adicione uma nova tarefa' 
                         type="text" 
                         required
-                        minLength='3'
                         value={novoTexto}
                         onChange={lidarComNovoTexto}
                     />
