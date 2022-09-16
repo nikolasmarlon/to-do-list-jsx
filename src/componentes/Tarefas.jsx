@@ -26,11 +26,31 @@ export function Tarefas(){
         setNovoTexto(event.target.value)
     }
 
-    function deletarTarefa (tarefa){
-        console.log (`Deletar comentário ${tarefa}`)
+    function deletarTarefa (tarefaParaDeletar){
+
+        const novaListaSemTarefaDeletada = tarefas.filter(tarefa => {
+            return tarefa !== tarefaParaDeletar
+        })
+        setTarefas(novaListaSemTarefaDeletada)
+        
     }
 
     const casoNaoTenhaTexto = novoTexto.length <= 4
+
+
+    const [contadorDeTarefasConluida, setContadorDeTarefasConcluida] = useState(0)
+
+    function contarTarefasConcluidas(checked) {
+        console.log(contadorDeTarefasConluida)
+        if (checked == true) {
+            setContadorDeTarefasConcluida(contadorDeTarefasConluida + 1)               
+            } else {
+            setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1 )             
+            
+        }
+
+        console.log(contadorDeTarefasConluida)
+    }
 
     return(
         
@@ -55,7 +75,7 @@ export function Tarefas(){
                     <p>Tarefas criadas</p> <span>{tarefas.length}</span>
                 </div>
                 <div>
-                    <p>Concluídas</p> <span>2 de {tarefas.length}</span>
+                    <p>Concluídas</p> <span>{contadorDeTarefasConluida} de {tarefas.length}</span>
                 </div>
                 
             </header>
@@ -64,7 +84,8 @@ export function Tarefas(){
                     return <Tarefa 
                         key={tarefa} 
                         content={tarefa} 
-                        deletarTarefa={deletarTarefa}
+                        deletarTarefaProp={deletarTarefa}
+                        contarTarefasConcluidasProp = {contarTarefasConcluidas}
                     />
                 })}
                 
