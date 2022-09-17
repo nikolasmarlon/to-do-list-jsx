@@ -3,8 +3,10 @@ import { Trash } from 'phosphor-react'
 import { useState } from 'react'
 
 export function Tarefa({ content, deletarTarefaProp, contarTarefasConcluidasProp}){
+
     
     const [checked, setChecked] = useState(false)
+
 
     function isChecked () {       
         

@@ -1,17 +1,22 @@
 import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
+import { PlusCircle } from 'phosphor-react'
 import plusIcon from '../assets/plus.svg'
 import { useState } from 'react'
 
 export function Tarefas(){
 
+
     const [tarefas, setTarefas] = useState([])
 
     const [novoTexto, setNovoTexto] = useState ('')
 
+
     function lidarComNovaTarefa () {
         event.preventDefault()
+
         setTarefas([...tarefas, novoTexto])
+
         setNovoTexto('')
     }
 
@@ -25,13 +30,17 @@ export function Tarefas(){
             return tarefa !== tarefaParaDeletar
         })
         setTarefas(novaListaSemTarefaDeletada)
+
         
         if (contadorDeTarefasConluida > 0){
             setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
-        }        
+        }
+        
+        
     }
 
-    const casoNaoTenhaTexto = novoTexto.length <= 0
+    const casoNaoTenhaTexto = novoTexto.length <= 4
+
 
     const [contadorDeTarefasConluida, setContadorDeTarefasConcluida] = useState(0)
 
@@ -44,12 +53,15 @@ export function Tarefas(){
             } else {
                 setContadorDeTarefasConcluida((estado) => {
                     return estado + 1
-                })           
+                })        
+            
             }
         console.log(contadorDeTarefasConluida)
     }
 
     return(
+        
+
         <div className={styles.toDoList}>  
             <div className={styles.divForm}>
                 <form onSubmit={lidarComNovaTarefa}>
@@ -66,11 +78,13 @@ export function Tarefas(){
 
             <header>
                 <div className={styles.esquerda}>
+
                     <p>Tarefas criadas</p> <span>{tarefas.length}</span>
                 </div>
                 <div>
                     <p>Concluídas</p> <span>{contadorDeTarefasConluida} de {tarefas.length}</span>
-                </div>                
+                </div>
+                
             </header>
             <main>
                 {tarefas.map(tarefa => {
@@ -80,7 +94,8 @@ export function Tarefas(){
                         deletarTarefaProp={deletarTarefa}
                         contarTarefasConcluidasProp = {contarTarefasConcluidas}
                     />
-                })}                
+                })}
+                
             </main>
             
         </div>
