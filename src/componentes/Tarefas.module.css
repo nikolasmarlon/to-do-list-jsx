@@ -10,10 +10,12 @@
 .divForm form {
     width: 100%;
     display: flex;    
-    gap: 8px;    
+    gap: 8px;
+    
 }
 
-.divForm input[type=text]{     
+.divForm input[type=text]{  
+    
     width: 100%;
     height: 3.25rem;
     background-color: var(--gray-500);
@@ -22,9 +24,10 @@
     color: var(--gray-300);
     padding: 1rem;
     font-size: 1rem;
-    line-height: 1.4;    
+    line-height: 1.4;
+    
+    
 }
-
 .divForm form button{    
     display: flex;
     padding: 1rem;
@@ -45,11 +48,11 @@
 .divForm form button:not(:disabled):hover {
     background-color: var(--blue);
 }
-
 .divForm form button:disabled{
     opacity: 0.6;
     cursor: not-allowed;
 }
+
 
 .toDoList header{
     display: flex;    
@@ -69,10 +72,13 @@
     font-weight: bold;     
 }
 
+
+
 .toDoList header div:last-child{   
     color: var(--purple);
     font-weight: bold;   
 }
+
 
 .toDoList header span {    
     border-radius: 999px;   
