@@ -1,25 +1,12 @@
 import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
-import { PlusCircle } from 'phosphor-react'
 import plusIcon from '../assets/plus.svg'
 import { useState } from 'react'
 
 export function Tarefas(){
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const [tarefas, setTarefas] = useState([
-        'Fazer estilização do botão'
-    ])
-=======
     const [tarefas, setTarefas] = useState([])
->>>>>>> parent of 412b7f9 (update)
-=======
-    const [tarefas, setTarefas] = useState([
-        'Fazer estilização do botão'
-    ])
->>>>>>> parent of e87b808 (contador de tarefas e excluir tarefas)
 
     const [novoTexto, setNovoTexto] = useState ('')
 
@@ -42,19 +29,13 @@ export function Tarefas(){
             return tarefa !== tarefaParaDeletar
         })
         setTarefas(novaListaSemTarefaDeletada)
-<<<<<<< HEAD
 
         
-<<<<<<< HEAD
-=======
         if (contadorDeTarefasConluida > 0){
             setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
         }
         
-=======
->>>>>>> parent of e87b808 (contador de tarefas e excluir tarefas)
         
->>>>>>> parent of 412b7f9 (update)
     }
 
     const casoNaoTenhaTexto = novoTexto.length <= 4
@@ -119,5 +100,3 @@ export function Tarefas(){
         </div>
     )
 }
-
-
