@@ -15,23 +15,26 @@ export function Tarefa({ content, deletarTarefaProp, contarTarefasConcluidasProp
     }
 
     function contar(){
-        console.log(checked)
+        
         isChecked()
         contarTarefasConcluidasProp(checked)
-        console.log(checked)
+        
     }
     
 
     function lidarComdeletarTarefa () {
 
-        deletarTarefaProp(content)
+        isChecked()
+        deletarTarefaProp(content, checked)
         
     }
 
    
 
     return(
-        <label  className={styles.contentTarefa}>
+        <label htmlFor={ content } className={styles.contentTarefa}>
+
+           
             <input onChange={contar} checked={checked} name="task" id={ content } type="checkbox" />
             <span></span>
             

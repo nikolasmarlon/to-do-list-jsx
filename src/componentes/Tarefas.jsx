@@ -23,39 +23,42 @@ export function Tarefas(){
         setNovoTexto(event.target.value)
     }
 
-    function deletarTarefa (tarefaParaDeletar){
+    function deletarTarefa (tarefaParaDeletar, checked){
 
         const novaListaSemTarefaDeletada = tarefas.filter(tarefa => {
             return tarefa !== tarefaParaDeletar
         })
         setTarefas(novaListaSemTarefaDeletada)
 
-        
-        if (contadorDeTarefasConluida > 0){
-            setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
+        if (checked === true) {
+            if (contadorDeTarefasConluida > 0){
+                setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
+            }
         }
         
-        
+          
     }
 
-    const casoNaoTenhaTexto = novoTexto.length <= 4
+    const casoNaoTenhaTexto = novoTexto.length <= 1
 
 
     const [contadorDeTarefasConluida, setContadorDeTarefasConcluida] = useState(0)
 
     function contarTarefasConcluidas(checked) {
-        console.log(contadorDeTarefasConluida)
+        
         if (checked === true) {
-            setContadorDeTarefasConcluida((estado) => {
-                return estado - 1
-            })               
-            } else {
+            if(contadorDeTarefasConluida > 0) {
                 setContadorDeTarefasConcluida((estado) => {
-                    return estado + 1
-                })        
-            
+                    return estado - 1
+                })
             }
-        console.log(contadorDeTarefasConluida)
+                           
+        } else  {
+            setContadorDeTarefasConcluida((estado) => {
+                return estado + 1
+            })         
+        }
+        
     }
 
     return(
@@ -69,6 +72,7 @@ export function Tarefas(){
                         type="text" 
                         required
                         value={novoTexto}
+                        minLength="4"
                         onChange={lidarComNovoTexto}
                     />
                     <button disabled={casoNaoTenhaTexto}>Criar <img src={plusIcon} /></button>
@@ -81,7 +85,7 @@ export function Tarefas(){
                     <p>Tarefas criadas</p> <span>{tarefas.length}</span>
                 </div>
                 <div>
-                    <p>Concluídas</p> <span>{contadorDeTarefasConluida} de {tarefas.length}</span>
+                    <p>Concluídas</p><span>{contadorDeTarefasConluida} de {tarefas.length}</span>
                 </div>
                 
             </header>
