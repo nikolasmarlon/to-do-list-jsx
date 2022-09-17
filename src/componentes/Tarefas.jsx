@@ -7,9 +7,13 @@ import { useState } from 'react'
 export function Tarefas(){
 
 
+<<<<<<< HEAD
     const [tarefas, setTarefas] = useState([
         'Fazer estilização do botão'
     ])
+=======
+    const [tarefas, setTarefas] = useState([])
+>>>>>>> parent of 412b7f9 (update)
 
     const [novoTexto, setNovoTexto] = useState ('')
 
@@ -32,7 +36,16 @@ export function Tarefas(){
             return tarefa !== tarefaParaDeletar
         })
         setTarefas(novaListaSemTarefaDeletada)
+
         
+<<<<<<< HEAD
+=======
+        if (contadorDeTarefasConluida > 0){
+            setContadorDeTarefasConcluida(contadorDeTarefasConluida - 1)
+        }
+        
+        
+>>>>>>> parent of 412b7f9 (update)
     }
 
     const casoNaoTenhaTexto = novoTexto.length <= 4
