@@ -65,6 +65,7 @@
 .toDoList header div {
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 .toDoList header div:first-child{    
@@ -91,9 +92,7 @@
 .mainTask {
     border-top: 1px solid var(--gray-400);
     border-radius: 8px;
-    min-height: 300px;
-    
-   
+    min-height: 300px; 
     
 }
 
