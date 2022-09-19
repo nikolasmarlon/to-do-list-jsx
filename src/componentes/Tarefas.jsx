@@ -2,6 +2,8 @@ import { Tarefa } from './Tarefa'
 import styles from './Tarefas.module.css'
 import plusIcon from '../assets/plus.svg'
 import { useState } from 'react'
+import Clipboard from '../assets/Clipboard.svg'
+
 
 export function Tarefas(){
 
@@ -39,7 +41,7 @@ export function Tarefas(){
           
     }
 
-    const casoNaoTenhaTexto = novoTexto.length <= 1
+    const casoNaoTenhaTexto = novoTexto.length <= 0
 
 
     const [contadorDeTarefasConluida, setContadorDeTarefasConcluida] = useState(0)
@@ -89,7 +91,21 @@ export function Tarefas(){
                 </div>
                 
             </header>
-            <main>
+            <main className={styles.mainTask}>
+
+                { tarefas.length <= 0 && 
+                    <div className={styles.warnings}>
+                        <img src={Clipboard} alt="Clipboard" />
+                        <div>
+                            <h1>Você ainda não tem tarefas cadastradas</h1>
+                            <p>Crie tarefas e organize seus itens a fazer</p>
+                        </div>
+                        
+                       
+                    </div>                    
+                }
+                
+                
                 {tarefas.map(tarefa => {
                     return <Tarefa 
                         key={tarefa} 
